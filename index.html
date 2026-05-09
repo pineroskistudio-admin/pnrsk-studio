@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PNRSK Studio — Antonio Piñero · Artista gráfico freelance · Chiclana de la Frontera</title>
+  <meta name="description" content="Artista gráfico freelance en Chiclana de la Frontera, Cádiz. Branding, diseño web, redes sociales, impresión, foto y vídeo, e inteligencia artificial para tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ab: 'Archivo Black', sans-serif;
+      --hn: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --cream: #F5EDD8;
+      --cream-dark: #EDE5CC;
+      --blue: #00AAEE;
+      --dark: #2e2e2e;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--hn);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body * { font-family: var(--hn); }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid rgba(46,46,46,0.1);
+      background: rgba(245,237,216,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 11px; }
+    .logo-icon svg { width: 34px; height: 21px; display: block; }
+    .logo-t1 { font-family: var(--ab); font-size: 13px; letter-spacing: 0.14em; color: var(--blue); text-transform: uppercase; display: block; }
+    .logo-t2 { font-size: 9px; letter-spacing: 0.2em; color: rgba(46,46,46,0.38); text-transform: uppercase; display: block; margin-top: 2px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.04em; color: rgba(46,46,46,0.45); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-cta {
+      font-size: 10px; letter-spacing: 0.08em;
+      border: 0.5px solid var(--blue); color: var(--blue);
+      padding: 0.5rem 1.25rem; cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue); color: var(--cream); }
+
+    /* ── TICKER ── */
+    .ticker {
+      padding: 0.65rem 0;
+      border-bottom: 0.5px solid rgba(46,46,46,0.07);
+      background: var(--cream-dark);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner { display: inline-block; animation: tick 32s linear infinite; }
+    .ticker-inner span { font-size: 10px; letter-spacing: 0.12em; color: rgba(46,46,46,0.25); padding: 0 1.75rem; }
+    .ticker-inner span.hi { color: var(--blue); }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── HERO ── */
+    .hero { padding: 5rem 2.5rem 4rem; border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue); animation: blink 2.5s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+    .eyebrow-text { font-size: 10px; letter-spacing: 0.12em; color: rgba(46,46,46,0.4); text-transform: uppercase; }
+    .hero-claim { font-family: var(--ab); font-size: clamp(3.2rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: -0.02em; color: var(--dark); max-width: 800px; margin-bottom: 1.25rem; }
+    .hero-claim .blue { color: var(--blue); }
+    .hero-sub { font-size: 13px; color: rgba(46,46,46,0.45); margin-bottom: 3rem; max-width: 500px; line-height: 1.65; }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; }
+    .hero-desc { max-width: 360px; font-size: 14px; color: rgba(46,46,46,0.5); line-height: 1.85; font-weight: 300; }
+    .hero-desc strong { color: var(--dark); font-weight: 500; }
+    .hero-stats { display: flex; gap: 2.5rem; }
+    .stat-n { font-family: var(--ab); font-size: 2.6rem; color: var(--dark); line-height: 1; letter-spacing: -0.02em; }
+    .stat-n span { color: var(--blue); }
+    .stat-l { font-size: 9px; letter-spacing: 0.1em; color: rgba(46,46,46,0.35); margin-top: 0.25rem; text-transform: uppercase; }
+
+    /* ── SECTION HEADER ── */
+    .section-bar { display: flex; justify-content: space-between; align-items: baseline; padding: 2.5rem 2.5rem 1.75rem; }
+    .sb-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(46,46,46,0.3); margin-bottom: 0.35rem; }
+    .sb-title { font-family: var(--ab); font-size: 1.7rem; letter-spacing: -0.01em; color: var(--dark); }
+    .sb-right { font-size: 10px; letter-spacing: 0.06em; color: rgba(46,46,46,0.35); border-bottom: 0.5px solid rgba(46,46,46,0.2); padding-bottom: 1px; cursor: pointer; }
+    .sb-right:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* ── PORTFOLIO ── */
+    .port-section { border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .port-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: rgba(46,46,46,0.08); }
+    .pi { position: relative; overflow: hidden; cursor: pointer; background: var(--cream); }
+    .pi:hover .po { opacity: 1; }
+    .pi:hover .pv { transform: scale(1.04); }
+    .pi.xl { grid-column: span 7; aspect-ratio: 16/9; }
+    .pi.md { grid-column: span 5; aspect-ratio: 16/9; }
+    .pi.sm { grid-column: span 4; aspect-ratio: 4/3; }
+    .pi.lg { grid-column: span 8; aspect-ratio: 4/3; }
+    .pv { width: 100%; height: 100%; transition: transform 0.55s ease; display: flex; align-items: center; justify-content: center; position: relative; }
+    .pv-a { background: #D6EEF8; } .pv-b { background: #E2D8EE; } .pv-c { background: #D4E8DC; } .pv-d { background: #EEE0C8; } .pv-e { background: #D8E8F2; }
+    .pv-bg { font-family: var(--ab); font-size: 4.5rem; letter-spacing: -0.03em; opacity: 0.08; position: absolute; color: var(--dark); user-select: none; }
+    .pv-mark { position: relative; z-index: 1; width: 48px; height: 30px; }
+    .po { position: absolute; inset: 0; background: rgba(245,237,216,0.95); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; z-index: 2; }
+    .po-cat { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.4rem; }
+    .po-name { font-family: var(--ab); font-size: 1.2rem; letter-spacing: -0.01em; color: var(--dark); line-height: 1.05; }
+    .po-tags { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .po-tag { font-size: 9px; letter-spacing: 0.06em; color: rgba(46,46,46,0.4); border: 0.5px solid rgba(46,46,46,0.15); padding: 2px 7px; }
+
+    /* ── VERDAD BAND ── */
+    .verdad-band { background: var(--blue); padding: 4rem 2.5rem; border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .vb-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,237,216,0.5); margin-bottom: 1.5rem; }
+    .vb-big { font-family: var(--ab); font-size: clamp(2rem, 5vw, 3.8rem); line-height: 0.95; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 1.5rem; }
+    .vb-sub { font-size: 13px; color: rgba(245,237,216,0.65); line-height: 1.65; max-width: 440px; }
+
+    /* ── SERVICIOS ── */
+    .svc-section { border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .svc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(46,46,46,0.08); }
+    .svc-item { background: var(--cream); padding: 2rem 1.5rem; transition: background 0.25s; }
+    .svc-item:hover { background: var(--cream-dark); }
+    .svc-n { font-size: 10px; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 1.25rem; }
+    .svc-name { font-family: var(--ab); font-size: 1rem; letter-spacing: -0.01em; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.2; }
+    .svc-list { list-style: none; }
+    .svc-list li { font-size: 11px; color: rgba(46,46,46,0.48); padding: 0.3rem 0; border-bottom: 0.5px solid rgba(46,46,46,0.07); line-height: 1.4; }
+    .svc-list li:last-child { border: none; }
+
+    /* ── IA ── */
+    .ia-section { border-bottom: 0.5px solid rgba(46,46,46,0.08); background: #F0E8D0; }
+    .ia-inner { padding: 4rem 2.5rem; }
+    .ia-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
+    .ia-tag { display: inline-block; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--blue); color: var(--cream); padding: 4px 12px; margin-bottom: 1rem; }
+    .ia-title { font-family: var(--ab); font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 0.93; letter-spacing: -0.02em; color: var(--dark); max-width: 480px; }
+    .ia-title .blue { color: var(--blue); }
+    .ia-intro { font-size: 14px; color: rgba(46,46,46,0.5); line-height: 1.85; max-width: 340px; font-weight: 300; padding-top: 0.5rem; }
+    .ia-intro strong { color: var(--dark); font-weight: 500; }
+    .ia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(46,46,46,0.1); }
+    .ia-card { background: var(--cream); padding: 2rem 1.75rem; transition: background 0.25s; }
+    .ia-card:hover { background: var(--cream-dark); }
+    .ia-card-num { font-size: 10px; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 1rem; }
+    .ia-card-title { font-family: var(--ab); font-size: 1.05rem; letter-spacing: -0.01em; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.2; }
+    .ia-card-desc { font-size: 12px; color: rgba(46,46,46,0.48); line-height: 1.7; }
+    .ia-bottom { display: flex; align-items: center; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 0.5px solid rgba(46,46,46,0.1); flex-wrap: wrap; }
+    .ia-bottom-text { font-size: 13px; color: rgba(46,46,46,0.5); line-height: 1.65; max-width: 500px; }
+    .ia-bottom-text strong { color: var(--dark); font-weight: 500; }
+    .ia-cta { font-size: 10px; letter-spacing: 0.1em; white-space: nowrap; background: var(--dark); color: var(--cream); padding: 0.85rem 2rem; cursor: pointer; transition: background 0.2s; }
+    .ia-cta:hover { background: var(--blue); }
+
+    /* ── ABOUT ── */
+    .about-split { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .ab-left { padding: 4rem 2.5rem; border-right: 0.5px solid rgba(46,46,46,0.08); }
+    .ab-big { font-family: var(--ab); font-size: 2.6rem; line-height: 0.94; letter-spacing: -0.02em; color: var(--dark); margin: 1.25rem 0 1.75rem; }
+    .ab-big .blue { color: var(--blue); }
+    .ab-txt { font-size: 14px; color: rgba(46,46,46,0.5); line-height: 1.9; font-weight: 300; max-width: 360px; }
+    .ab-txt strong { color: var(--dark); font-weight: 500; }
+    .ab-right { padding: 4rem 2.5rem; }
+    .contact-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(46,46,46,0.3); margin-bottom: 1.5rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.75rem; padding: 1.1rem 0; border-bottom: 0.5px solid rgba(46,46,46,0.08); }
+    .contact-row:first-of-type { border-top: 0.5px solid rgba(46,46,46,0.08); }
+    .contact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+    .contact-val { font-size: 13px; color: var(--dark); }
+    .contact-sub { font-size: 10px; color: rgba(46,46,46,0.35); letter-spacing: 0.04em; }
+    .social-row { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+    .soc-btn { font-size: 10px; letter-spacing: 0.08em; border: 0.5px solid rgba(46,46,46,0.18); padding: 0.5rem 1rem; color: rgba(46,46,46,0.45); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+    .soc-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── CTA ── */
+    .cta-band { padding: 5rem 2.5rem; text-align: center; border-bottom: 0.5px solid rgba(46,46,46,0.08); background: var(--cream-dark); }
+    .cta-sup { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(46,46,46,0.35); margin-bottom: 1.5rem; }
+    .cta-big { font-family: var(--ab); font-size: clamp(2.5rem, 6vw, 5rem); line-height: 0.92; letter-spacing: -0.02em; color: var(--dark); margin-bottom: 2.5rem; }
+    .cta-big .blue { color: var(--blue); }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-primary { font-size: 10px; letter-spacing: 0.1em; background: var(--blue); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-weight: 700; transition: opacity 0.2s; }
+    .cta-primary:hover { opacity: 0.85; }
+    .cta-secondary { font-size: 10px; letter-spacing: 0.08em; background: transparent; color: var(--dark); padding: 1rem 2.5rem; border: 0.5px solid rgba(46,46,46,0.25); cursor: pointer; transition: border-color 0.2s; }
+    .cta-secondary:hover { border-color: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer { padding: 1.75rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: var(--cream-dark); border-top: 0.5px solid rgba(46,46,46,0.08); }
+    .ft-logo { font-family: var(--ab); font-size: 0.8rem; letter-spacing: 0.1em; color: rgba(46,46,46,0.3); text-transform: uppercase; }
+    .ft-copy { font-size: 10px; color: rgba(46,46,46,0.25); letter-spacing: 0.04em; }
+    .ft-links { display: flex; gap: 1.5rem; list-style: none; }
+    .ft-links a { font-size: 10px; letter-spacing: 0.06em; color: rgba(46,46,46,0.28); transition: color 0.2s; }
+    .ft-links a:hover { color: var(--blue); }
+
+    /* ── LOGO SVG ── */
+    .logo-svg { width: 34px; height: 21px; display: block; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg class="logo-svg" viewBox="0 0 54 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,17 20,0 35,17 20,34" fill="#00AAEE"/>
+      <polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#00AAEE" opacity="0.65"/>
+      <polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#00AAEE" opacity="0.85"/>
+    </svg>
+    <div>
+      <span class="logo-t1">PNRSK</span>
+      <span class="logo-t2">Studio</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Trabajo</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#ia">Inteligencia artificial</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:pineroskistudio@gmail.com">Hablemos →</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="hi">✦</span><span>Branding & logos</span><span class="hi">✦</span><span>Diseño web</span><span class="hi">✦</span><span>Redes sociales</span><span class="hi">✦</span><span>Flyers & carteles</span><span class="hi">✦</span><span>Gran formato</span><span class="hi">✦</span><span>Agentes IA</span><span class="hi">✦</span><span>Chatbots</span><span class="hi">✦</span><span>Meta Ads</span><span class="hi">✦</span><span>Google Ads</span><span class="hi">✦</span><span>Automatización</span><span class="hi">✦</span><span>Foto & vídeo</span><span class="hi">✦</span><span>Menús restaurantes</span>
+    <span class="hi">✦</span><span>Branding & logos</span><span class="hi">✦</span><span>Diseño web</span><span class="hi">✦</span><span>Redes sociales</span><span class="hi">✦</span><span>Flyers & carteles</span><span class="hi">✦</span><span>Gran formato</span><span class="hi">✦</span><span>Agentes IA</span><span class="hi">✦</span><span>Chatbots</span><span class="hi">✦</span><span>Meta Ads</span><span class="hi">✦</span><span>Google Ads</span><span class="hi">✦</span><span>Automatización</span><span class="hi">✦</span><span>Foto & vídeo</span><span class="hi">✦</span><span>Menús restaurantes</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    <span class="eyebrow-text">Artista gráfico freelance · Chiclana de la Frontera, Cádiz</span>
+  </div>
+  <h1 class="hero-claim">El branding<br>no es estética.<br>Es <span class="blue">estrategia</span><br>con cara.</h1>
+  <p class="hero-sub">Cuando hago una marca, no diseño bonito.<br>Diseño para que te elijan a ti y no al de al lado.</p>
+  <div class="hero-bottom">
+    <p class="hero-desc">El cliente no compra lo que vendes.<br><strong>Compra lo que pareces.</strong><br><br>Soy Antonio Piñero — diseño identidades, piezas gráficas y ahora también implemento herramientas de IA para que tu negocio trabaje más inteligente.</p>
+    <div class="hero-stats">
+      <div><div class="stat-n">10<span>+</span></div><div class="stat-l">Años</div></div>
+      <div><div class="stat-n">200<span>+</span></div><div class="stat-l">Proyectos</div></div>
+      <div><div class="stat-n">50<span>+</span></div><div class="stat-l">Clientes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="port-section" id="portfolio">
+  <div class="section-bar">
+    <div><div class="sb-label">Trabajo seleccionado</div><div class="sb-title">Portafolio</div></div>
+    <a class="sb-right" href="https://pineroskistudio.myportfolio.com" target="_blank">Ver todo →</a>
+  </div>
+  <div class="port-grid">
+    <div class="pi xl">
+      <div class="pv pv-a"><span class="pv-bg">Pádel</span><svg class="pv-mark" viewBox="0 0 54 34" fill="none"><polygon points="0,17 20,0 35,17 20,34" fill="#00AAEE" opacity="0.5"/><polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#00AAEE" opacity="0.35"/><polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#00AAEE" opacity="0.45"/></svg></div>
+      <div class="po"><div class="po-cat">Branding · identidad visual · RRSS</div><div class="po-name">El Remate Pádel Club</div><div class="po-tags"><span class="po-tag">Logo</span><span class="po-tag">Social media</span><span class="po-tag">Branding</span></div></div>
+    </div>
+    <div class="pi md">
+      <div class="pv pv-b"><span class="pv-bg">Brand</span><svg class="pv-mark" viewBox="0 0 54 34" fill="none"><polygon points="0,17 20,0 35,17 20,34" fill="#7B5EA7" opacity="0.4"/><polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#7B5EA7" opacity="0.28"/><polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#7B5EA7" opacity="0.35"/></svg></div>
+      <div class="po"><div class="po-cat">Branding · identidad</div><div class="po-name">LyM Tu Silueta</div><div class="po-tags"><span class="po-tag">Logo</span><span class="po-tag">Branding</span></div></div>
+    </div>
+    <div class="pi sm">
+      <div class="pv pv-c"><span class="pv-bg">Menú</span><svg class="pv-mark" viewBox="0 0 54 34" fill="none"><polygon points="0,17 20,0 35,17 20,34" fill="#2E8B57" opacity="0.4"/><polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#2E8B57" opacity="0.28"/><polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#2E8B57" opacity="0.35"/></svg></div>
+      <div class="po"><div class="po-cat">Diseño editorial · restaurante</div><div class="po-name">El Chozo del Caí</div><div class="po-tags"><span class="po-tag">Menú</span><span class="po-tag">Print</span></div></div>
+    </div>
+    <div class="pi lg">
+      <div class="pv pv-d"><span class="pv-bg">Cerveza</span><svg class="pv-mark" viewBox="0 0 54 34" fill="none"><polygon points="0,17 20,0 35,17 20,34" fill="#C47A2A" opacity="0.4"/><polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#C47A2A" opacity="0.28"/><polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#C47A2A" opacity="0.35"/></svg></div>
+      <div class="po"><div class="po-cat">Branding · packaging</div><div class="po-name">Colorada cerveza artesana</div><div class="po-tags"><span class="po-tag">Branding</span><span class="po-tag">Packaging</span></div></div>
+    </div>
+    <div class="pi md">
+      <div class="pv pv-e"><span class="pv-bg">Bikes</span><svg class="pv-mark" viewBox="0 0 54 34" fill="none"><polygon points="0,17 20,0 35,17 20,34" fill="#00AAEE" opacity="0.4"/><polygon points="22,7 40,7 54,17 40,27 22,27 36,17" fill="#00AAEE" opacity="0.28"/><polygon points="32,23 46,23 54,17 46,11 32,11 41,17" fill="#00AAEE" opacity="0.35"/></svg></div>
+      <div class="po"><div class="po-cat">Branding · diseño web</div><div class="po-name">Movio Electric Bikes</div><div class="po-tags"><span class="po-tag">Branding</span><span class="po-tag">Web</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VERDAD -->
+<section class="verdad-band">
+  <div class="vb-label">Verdad</div>
+  <div class="vb-big">Una marca no es<br>un logo. Es una<br>decisión de negocio.</div>
+  <p class="vb-sub">94% de las decisiones de compra se basan en lo visual. Y tu marca dice 'plantilla genérica'.</p>
+</section>
+
+<!-- SERVICIOS -->
+<section class="svc-section" id="servicios">
+  <div class="section-bar">
+    <div><div class="sb-label">Lo que ofrezco</div><div class="sb-title">Servicios</div></div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-item">
+      <div class="svc-n">01</div>
+      <div class="svc-name">Branding & identidad</div>
+      <ul class="svc-list">
+        <li>Logo + sistema visual completo</li>
+        <li>Paleta y tipografía con sentido</li>
+        <li>Manual de marca usable</li>
+        <li>Plantillas listas para usar</li>
+      </ul>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">02</div>
+      <div class="svc-name">Diseño gráfico</div>
+      <ul class="svc-list">
+        <li>Flyers y carteles</li>
+        <li>Vallas gran formato</li>
+        <li>Menús restaurantes</li>
+        <li>Papelería corporativa</li>
+      </ul>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">03</div>
+      <div class="svc-name">Digital & redes</div>
+      <ul class="svc-list">
+        <li>Gestión Instagram</li>
+        <li>Contenido y estrategia visual</li>
+        <li>Google My Business</li>
+        <li>Meta Ads & Google Ads</li>
+      </ul>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">04</div>
+      <div class="svc-name">Web & UI/UX</div>
+      <ul class="svc-list">
+        <li>Diseño web</li>
+        <li>Landing pages</li>
+        <li>Banners digitales</li>
+        <li>UI/UX</li>
+      </ul>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">05</div>
+      <div class="svc-name">Foto & vídeo</div>
+      <ul class="svc-list">
+        <li>Fotografía producto</li>
+        <li>Vídeo corporativo</li>
+        <li>Reels & contenido</li>
+        <li>Retoque digital</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- IA -->
+<section class="ia-section" id="ia">
+  <div class="ia-inner">
+    <div class="ia-header">
+      <div>
+        <div class="ia-tag">Nuevo servicio</div>
+        <div class="ia-title">Implementa <span class="blue">inteligencia artificial</span> en tu negocio</div>
+      </div>
+      <p class="ia-intro">No hace falta ser una gran empresa para usar IA. <strong>Un chatbot que responde a tus clientes a las 3am, un agente que organiza tus pedidos, un sistema que procesa tus documentos solo.</strong> Eso ya existe y lo puedo instalar en tu negocio.</p>
+    </div>
+    <div class="ia-grid">
+      <div class="ia-card"><div class="ia-card-num">01</div><div class="ia-card-title">Chatbots & asistentes</div><p class="ia-card-desc">Atiende a tus clientes 24/7 sin estar tú. Responde preguntas frecuentes, gestiona reservas y cualifica leads. Para web, WhatsApp o Instagram.</p></div>
+      <div class="ia-card"><div class="ia-card-num">02</div><div class="ia-card-title">Agentes inteligentes</div><p class="ia-card-desc">Automatiza tareas repetitivas — responder emails, actualizar hojas de cálculo, generar informes, gestionar pedidos. Un agente que trabaja por ti.</p></div>
+      <div class="ia-card"><div class="ia-card-num">03</div><div class="ia-card-title">Organización de documentos</div><p class="ia-card-desc">Facturas, contratos, fichas de clientes — la IA los lee, los clasifica y te los encuentra cuando los necesitas. Deja de perder tiempo buscando archivos.</p></div>
+      <div class="ia-card"><div class="ia-card-num">04</div><div class="ia-card-title">Contenido con IA</div><p class="ia-card-desc">Posts, copies, descripciones de productos con tu voz y tu tono. Un sistema entrenado para sonar como tú, cada vez.</p></div>
+      <div class="ia-card"><div class="ia-card-num">05</div><div class="ia-card-title">Flujos automatizados</div><p class="ia-card-desc">Conecta tus herramientas — cuando llega un pedido, cuando alguien rellena un formulario, cuando un cliente no ha vuelto en 30 días.</p></div>
+      <div class="ia-card"><div class="ia-card-num">06</div><div class="ia-card-title">Formación & consultoría</div><p class="ia-card-desc">¿No sabes por dónde empezar? Una sesión de diagnóstico para ver qué puede hacer la IA por tu negocio. Sin humo, sin tecnicismos.</p></div>
+    </div>
+    <div class="ia-bottom">
+      <p class="ia-bottom-text">La IA no va a quitarte el trabajo. Pero <strong>el que la use va a trabajar mejor que tú</strong> si no la usas. Cuéntame cómo funciona tu negocio y te digo qué se puede automatizar.</p>
+      <a class="ia-cta" href="mailto:pineroskistudio@gmail.com">Quiero saber más →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-split" id="sobre">
+  <div class="ab-left">
+    <div class="sb-label">Quién soy</div>
+    <div class="ab-big">Trato directo.<br>Sin <span class="blue">intermediarios.</span></div>
+    <p class="ab-txt">Soy Antonio Piñero, artista gráfico freelance de Chiclana de la Frontera. Llevo más de diez años haciendo que las marcas dejen de pasar desapercibidas.<br><br>Trabajo con restaurantes, clubs deportivos, pequeñas empresas y marcas que quieren nacer con fuerza. <strong>Conmigo hablas directamente con quien hace el trabajo.</strong></p>
+  </div>
+  <div class="ab-right" id="contacto">
+    <div class="contact-label">Contacto directo</div>
+    <div class="contact-row">
+      <span class="contact-dot"></span>
+      <div><div class="contact-val">pineroskistudio@gmail.com</div><div class="contact-sub">Email</div></div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-dot"></span>
+      <div><div class="contact-val">+34 680 56 08 50</div><div class="contact-sub">Teléfono / WhatsApp</div></div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-dot"></span>
+      <div><div class="contact-val">pineroskistudio.myportfolio.com</div><div class="contact-sub">Portafolio</div></div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-dot"></span>
+      <div><div class="contact-val">Chiclana de la Frontera, Cádiz</div><div class="contact-sub">Presencial y remoto</div></div>
+    </div>
+    <div class="social-row">
+      <a class="soc-btn" href="https://instagram.com/pineroski_studio" target="_blank">@pineroski_studio</a>
+      <a class="soc-btn" href="https://behance.net/antoniopinero" target="_blank">Behance</a>
+      <a class="soc-btn" href="https://linkedin.com/in/antonio-piñero-morales-158736243" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-sup">¿Tu marca dice lo que quieres decir?</div>
+  <div class="cta-big">Si tu logo lo puede<br>hacer cualquiera,<br>tu negocio <span class="blue">también.</span></div>
+  <div class="cta-btns">
+    <a class="cta-primary" href="mailto:pineroskistudio@gmail.com">Escribirme ahora</a>
+    <a class="cta-secondary" href="https://pineroskistudio.myportfolio.com" target="_blank">Ver portafolio completo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">PNRSK Studio®</div>
+  <div class="ft-copy">© 2026 Antonio Piñero Morales · Artista gráfico freelance · Chiclana de la Frontera</div>
+  <ul class="ft-links">
+    <li><a href="https://instagram.com/pineroski_studio" target="_blank">Instagram</a></li>
+    <li><a href="https://behance.net/antoniopinero" target="_blank">Behance</a></li>
+    <li><a href="https://pineroskistudio.myportfolio.com" target="_blank">Portafolio</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
